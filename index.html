@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDine Queue</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🍽 SmartDine Queue</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#restaurants">Restaurants</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Find Your Perfect Dining Experience</h1>
+        <p>Discover top-rated restaurants near you</p>
+
+        <div class="hero-buttons">
+            <input
+    type="text"
+    id="searchInput"
+    placeholder="Search restaurants..."
+    onkeyup="searchRestaurants()"
+    style="display:none;">
+    <button class="browse-btn" onclick="browseRestaurants()">
+        🍽 Browse Restaurants
+
+        
+    </button>
+
+    <button class="near-me-btn" onclick="findNearby()">
+        📍 Near Me
+    </button>
+</div>
+        <div class="stats">
+
+    <div class="stat-card">
+        <h2>⭐ 4.8</h2>
+        <p>Rating</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>500+</h2>
+        <p>Restaurants</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>25K+</h2>
+        <p>Happy Diners</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>50+</h2>
+        <p>Cuisine Types</p>
+    </div>
+
+</div>
+    </section>
+
+    <section class="restaurants" id="restaurants">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" alt="Restaurant">
+
+            <div class="card-content">
+
+                <div class="top-row">
+                    
+                    <h2 class="restaurant-name">Paradise Biryani</h2>
+                    <span class="rating">⭐ 4.5</span>
+                </div>
+
+                <p>📍 2 km Away</p>
+
+                <div class="tags">
+                    <span>20% OFF</span>
+                    <span>Dinner</span>
+                    <span>Dine-In</span>
+                </div>
+
+                <div class="buttons">
+                    <a href="paradise-Binary.html" class="details-btn">
+                        View Details
+                    </a>
+                    <a href="paradise-Binary.html#reservation" class="book-btn">
+                        Book Table
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800" alt="Restaurant">
+
+            <div class="card-content">
+
+                <div class="top-row">
+                    <h2 class="restaurant-name">Burger Hub</h2>
+                    <span class="rating">⭐ 4.3</span>
+                </div>
+
+                <p>📍 1.5 km Away</p>
+
+                <div class="tags">
+                    <span>15% OFF</span>
+                    <span>Fast Food</span>
+                    <span>Dine-In</span>
+                </div>
+
+                <div class="buttons">
+                    <a href="burger-hub.html" class="details-btn">
+                        View Details
+                    </a>
+                    <a href="burger-hub.html" class="book-btn">
+                        Book Table
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="card">
+    <img src="https://images.unsplash.com/photo-1515669097368-22e68427d265?w=800" alt="Restaurant">
+
+    <div class="card-content">
+        <div class="top-row">
+            <h2 class="restaurant-name">Spice Garden</h2>
+            <span class="rating">⭐ 4.7</span>
+        </div>
+
+        <p>📍 3 km Away</p>
+
+        <div class="tags">
+            <span>25% OFF</span>
+            <span>Fine Dining</span>
+            <span>Dine-In</span>
+        </div>
+
+        <div class="buttons">
+            <a href="spice-garden.html" class="details-btn">
+                View Details
+            </a>
+            <a href="spice-garden.html" class="book-btn">
+                Book Table
+            </a>
+</div>
+    </div>
+</div>
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800" alt="Restaurant">
+
+    <div class="card-content">
+        <div class="top-row">
+            <h2 class="restaurant-name">Restaurant and Bar</h2>
+            <span class="rating">⭐ 4.5</span>
+        </div>
+
+        <p>📍 2.5 km Away</p>
+
+        <div class="tags">
+            <span>25% OFF</span>
+            <span>Fine Dining</span>
+            <span>Dine-In</span>
+        </div>
+
+        <div class="buttons">
+            <a href="restaurants-and-bar.html" class="details-btn">
+                View Details
+            </a>
+            <a href="restaurants-and-bar.html" class="book-btn">
+                Book Table
+            </a>
+</div>
+    </div>
+</div>
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800" alt="Restaurant">
+
+    <div class="card-content">
+        <div class="top-row">
+            <h2 class="restaurant-name">Modern Cafe</h2>
+            <span class="rating">⭐ 4.6</span>
+        </div>
+
+        <p>📍 3 km Away</p>
+
+        <div class="tags">
+            <span>15% OFF</span>
+            <span>Fine Dining</span>
+            <span>Dine-In</span>
+        </div>
+
+        <div class="buttons">
+            <a href="modern-cafe.html" class="details-btn">
+                View Details
+            </a>
+            <a href="modern-cafe.html" class="book-btn">
+                Book Table
+            </a>
+        </div>
+    </div>
+</div>
+
+
+    </section>
+    
+
+</section>
+    <section class="our-story" id="about">
+
+    <h2>Our Story</h2>
+
+    <h3>Built by food lovers, for food lovers</h3>
+
+    <p>
+        SmartDine Queue started with a simple idea: make restaurant
+        discovery and table booking effortless. We wanted diners to
+        explore restaurants, reserve tables instantly, and enjoy
+        great food without long waiting times.
+    </p>
+
+</section>
+
+<footer class="footer" id="contact">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+            <h2>SmartDine Queue</h2>
+
+            <p>
+                Connecting great restaurants with great diners.
+                Helping people discover and book memorable dining experiences.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <h3>Discover</h3>
+                <ul>
+                    <li>Top Rated</li>
+                    <li>New Openings</li>
+                    <li>Fine Dining</li>
+                    <li>Brunch Spots</li>
+                    <li>Rooftop Dining</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Company</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Blog</li>
+                    <li>Press</li>
+                    <li>Partners</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul>
+                    <li>smartdinequeue@gmail.com</li>
+                    <li>+91 98765 43210</li>
+                    <li>Hyderabad, India</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>Help Centre | Privacy Policy</p>
+        <p>© 2026 SmartDine Queue. All rights reserved.</p>
+    </div>
+
+</footer>
+<script>
+function searchRestaurants() {
+
+    let input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let restaurantName =
+            card.querySelector(".restaurant-name")
+            .innerText
+            .toLowerCase();
+
+        if(
+            restaurantName.includes(input)
+        ){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+
+    });
+
+}
+</script>
+<script>
+
+function browseRestaurants() {
+
+    let searchBox = document.getElementById("searchInput");
+
+    if(searchBox.style.display === "none"){
+        searchBox.style.display = "block";
+        searchBox.focus();
+    }
+    else{
+        searchBox.focus();
+    }
+
+}
+
+function findNearby() {
+
+    alert("Showing restaurants within 5 km");
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach((card, index) => {
+
+        if(index < 3){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>

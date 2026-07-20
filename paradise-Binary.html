@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="banner-container">
+
+    <img class="banner-image" src="images/banner.webp" alt="Restaurant Banner">
+
+    <div class="banner-content">
+        <h1>Paradise Biryani</h1>
+
+        <div class="banner-info">
+            <span>⭐ 4.5 Rating</span>
+            <span>📍 2 km Away</span>
+            <span>🎉 20% OFF</span>
+        </div>
+    </div>
+
+</div>
+    <section class="about-section">
+    <h2>About Restaurant</h2>
+    <p>
+        Paradise Biryani is known for its rich aroma, flavorful spices, and perfectly cooked basmati rice.
+         The texture is light and fluffy, with each grain remaining separate and well-seasoned. The tender meat or vegetables blend smoothly with the spices, creating a balanced taste that is neither too mild nor too overpowering. Its savory flavor, combined with fragrant herbs and spices, gives a satisfying and authentic biryani experience. Overall, it offers a delicious mix of taste, aroma, and texture that many food lovers enjoy.
+
+    </p>
+</section>
+
+    <hr>
+    <section class="gallery-section">
+
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+        
+        <img src="images/pb1.webp" alt="pb 1">
+        <img src="images/pb2.jpg" alt="pb 2">
+        <img src="images/pb3.jpg" alt="pb 3">
+    </div>
+</section>
+    
+    <hr>
+<section class="category-section">
+    <button onclick="filterMenu('all')">All</button>
+    <button onclick="filterMenu('breakfast')">Breakfast</button>
+    <button onclick="filterMenu('lunch')">Lunch</button>
+    <button onclick="filterMenu('dinner')">Dinner</button>
+    <button onclick="filterMenu('fastfood')">Fast Food</button>
+</section>
+    <section id="menu-section">
+
+<h2>Menu</h2>
+
+<div class="menu-grid">
+
+    <div class="menu-card breakfast">
+    <h3>Idli</h3>
+
+    <p class="item-desc">
+        Soft steamed rice cakes served with sambar and chutney.
+    </p>
+
+    <p class="price">₹80</p>
+
+    <button class="add-btn"
+        onclick="addToCart('Idli',80,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Idli',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Idli',1,this)">+</button>
+        </div>
+</div>
+
+    <div class="menu-card breakfast">
+        <h3>Dosa</h3>
+        <p class="item-desc">
+            Crispy crepes made from fermented rice and lentil batter.
+        </p>
+        <p class="price">₹120</p>
+        <button class="add-btn"
+        onclick="addToCart('Dosa',120,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Dosa',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Dosa',1,this)">+</button>
+        </div>
+    </div>
+
+    <div class="menu-card lunch">
+        <h3>Chicken Biryani</h3>
+        <p class="item-desc">
+            Aromatic rice dish layered with tender chicken and spices.
+        </p>
+        <p class="price">₹250</p>
+        <button class="add-btn"
+        onclick="addToCart('Chicken Biryani',250,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Chicken Biryani',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Chicken Biryani',1,this)">+</button>
+        </div>
+    </div>
+
+    <div class="menu-card lunch">
+        <h3>Mutton Biryani</h3>
+        <p class="item-desc">
+            Aromatic rice dish layered with tender mutton and spices.
+        </p>
+        <p class="price">₹350</p>
+        <button class="add-btn" onclick="addToCart('Mutton Biryani',350,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Mutton Biryani',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Mutton Biryani',1,this)">+</button>
+        </div>
+    </div>
+
+    <div class="menu-card dinner">
+        <h3>Paneer Biryani</h3>
+        <p class="item-desc">
+            Aromatic rice dish layered with tender paneer and spices.
+        </p>
+        <p class="price">₹220</p>
+        <button class="add-btn"
+        onclick="addToCart('Paneer Biryani',220,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Paneer Biryani',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Paneer Biryani',1,this)">+</button>
+        </div>
+    </div>
+
+    <div class="menu-card fastfood">
+        <h3>Burger</h3>
+        <p class="item-desc">
+            Juicy beef patty served in a toasted bun with fresh vegetables.
+        </p>
+        <p class="price">₹150</p>
+        <button class="add-btn" onclick="addToCart('Burger',150,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Burger',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Burger',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card lunch">
+        <h3>Meals</h3>
+        <p class="item-desc">
+            A variety of delicious meals to satisfy your taste buds.
+        </p>
+        <p class="price">₹150</p>
+        <button class="add-btn" onclick="addToCart('Meals',150,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Meals',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Meals',1,this)">+</button>
+        </div>
+    </div>
+
+</div>
+
+</section>
+<section class="your-order">
+
+    <h2> Your Order</h2>
+
+    <div id="cartItems"></div>
+    <button id="placeOrderBtn"
+        onclick="placeOrder()"
+        style="display:none;">
+    Place Order
+</button>
+
+    
+
+</section>
+<section class="reservation-section" id="reservation">
+
+    <h2>Reserve a Table</h2>
+
+    <div class="offer-banner">
+        🎉 20% OFF applied on your total bill
+    </div>
+
+    <label>Date</label>
+    <input type="date" id="reservationDate">
+
+    <label>Select a Time</label>
+
+    <div class="time-slots" id="timeSlots">
+        <button type="button">12:00 PM</button>
+        <button type="button">12:30 PM</button>
+        <button type="button">1:00 PM</button>
+        <button type="button">7:00 PM</button>
+        <button type="button">7:30 PM</button>
+        <button type="button">8:00 PM</button>
+        <button type="button">8:30 PM</button>
+        <button type="button">9:00 PM</button>
+        <button type="button">9:30 PM</button>
+    </div>
+
+    <label>Number of Guests</label>
+
+    <select id="guests">
+        <option>1 Guest</option>
+        <option selected>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4 Guests</option>
+        <option>5 Guests</option>
+        <option>6 Guests</option>
+    </select>
+
+    
+
+    <p class="reservation-note">
+        Free cancellation up to 24 hours before.
+        No credit card needed.
+    </p>
+
+    <button
+    class="confirm-btn"
+    id="confirmBtn"
+    onclick="confirmReservation()">
+    Confirm Reservation
+</button>
+
+</section>
+<div id="queueCard" class="queue-card">
+
+    <h3>🎟 Queue Status</h3>
+
+    <p><strong>Queue Number:</strong>
+       <span id="queueNumber"></span></p>
+
+    <p><strong>People Ahead:</strong>
+       <span id="peopleAhead"></span></p>
+
+    <p><strong>Customers Waiting:</strong>
+       <span id="waitingCustomers"></span></p>
+
+    <p><strong>Tables Reserved Today:</strong>
+       <span id="reservedToday"></span></p>
+
+    <p><strong>Estimated Wait:</strong>
+       <span id="waitTime"></span></p>
+
+    <p><strong>Expected Entry Time:</strong>
+       <span id="entryTime"></span></p>
+
+    <p>
+    <strong>Status:</strong>
+    <span id="queueStatus" class="status waiting">
+        🟠 Waiting
+    </span>
+</p>
+    <p>
+    <strong>Remaining Wait:</strong>
+    <span id="countdown">0 min</span>
+</p>
+
+</div>
+
+    <section class="contact-details">
+    <h2>Contact Details</h2>
+
+    <div class="contact-info">
+        <p><strong>📞 Phone:</strong> +91 9876543210</p>
+
+        <p><strong>📧 Email:</strong> contact@paradisebiryani.com</p>
+
+        <p><strong>📍 Address:</strong> Road No. 36, Jubilee Hills, Hyderabad</p>
+
+        <p><strong>🕒 Opening Hours:</strong> 10:00 AM - 11:00 PM</p>
+    </div>
+</section>
+
+    
+
+
+<script>
+function addItem(button) {
+    button.style.display = "none";
+    button.nextElementSibling.style.display = "flex";
+}
+
+function changeQty(button, change) {
+    let span = button.parentElement.querySelector("span");
+    let qty = parseInt(span.innerText);
+
+    qty += change;
+
+    if (qty <= 0) {
+        button.parentElement.style.display = "none";
+        button.parentElement.previousElementSibling.style.display = "inline-block";
+    } else {
+        span.innerText = qty;
+    }
+}
+</script>
+<script>
+
+let cart = {};
+
+function addToCart(name, price, button){
+
+    if(!cart[name]){
+        cart[name] = {
+            price: price,
+            qty: 1
+        };
+
+        button.style.display = "none";
+        button.nextElementSibling.style.display = "flex";
+    }
+
+    updateCart();
+}
+function updateItem(name, change, btn){
+
+    let controls = btn.parentElement;
+    let qtySpan = controls.querySelector("span");
+
+    cart[name].qty += change;
+
+    if(cart[name].qty <= 0){
+
+        delete cart[name];
+
+        controls.style.display = "none";
+        controls.previousElementSibling.style.display = "inline-block";
+
+    } else {
+
+        qtySpan.innerText = cart[name].qty;
+    }
+
+    updateCart();
+}
+function updateCart(){
+
+    let cartHTML = "";
+    let subtotal = 0;
+
+    for(let item in cart){
+
+        let qty = cart[item].qty;
+        let price = cart[item].price;
+
+        subtotal += qty * price;
+
+        cartHTML += `
+            <p>${item} x ${qty} = ₹${qty * price}</p>
+        `;
+    }
+
+    let gst = subtotal * 0.05;
+    let discount = subtotal * 0.20;
+
+    let finalAmount = subtotal + gst - discount;
+
+    cartHTML += `
+        <hr>
+        <p>Subtotal: ₹${subtotal.toFixed(2)}</p>
+        <p>GST (5%): ₹${gst.toFixed(2)}</p>
+        <p>Discount (20% OFF): -₹${discount.toFixed(2)}</p>
+        <h3>Total: ₹${finalAmount.toFixed(2)}</h3>
+    `;
+
+    document.getElementById("cartItems").innerHTML = cartHTML;
+    const placeBtn =
+    document.getElementById("placeOrderBtn");
+
+if(Object.keys(cart).length > 0){
+    placeBtn.style.display = "block";
+}
+else{
+    placeBtn.style.display = "none";
+}
+}
+
+function changeQty(item,value){
+
+    cart[item].qty += value;
+
+    if(cart[item].qty <= 0){
+        delete cart[item];
+    }
+
+    updateCart();
+}
+
+function filterMenu(category){
+
+    let cards = document.querySelectorAll(".menu-card");
+
+    cards.forEach(card=>{
+
+        if(category === "all"){
+            card.style.display = "block";
+        }
+        else if(card.classList.contains(category)){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+
+    });
+}
+
+function confirmReservation(){
+
+    let date =
+        document.getElementById("reservationDate").value;
+
+    if(date === ""){
+        alert("Please select a date");
+        return;
+    }
+
+    if(selectedTime === ""){
+        alert("Please select a time slot");
+        return;
+    }
+
+    const preorder = confirm(
+        "🍽️ Would you like to pre-order your food?\n\n" +
+        "Pre-ordering helps us prepare your meal before you arrive."
+    );
+
+    if(preorder){
+
+        document
+            .getElementById("menu-section")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+        return;
+    }
+
+    alert(
+        "🎉 Your table has been reserved successfully!\n\n" +
+        "Thank you for choosing us."
+    );
+
+    generateQueue();
+    
+}
+function placeOrder(){
+
+    if(Object.keys(cart).length === 0){
+
+        alert(
+            "Please add food items first."
+        );
+
+        return;
+    }
+
+    alert(
+        "🎉 Your table is reserved successfully!\n\n" +
+        "🍽️ Your order has been placed.\n\n" +
+        "Thank you for choosing us."
+    );
+
+    generateQueue();
+
+    document
+        .getElementById("queueCard")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+}
+</script>
+<script>
+function clearCart(){
+
+    cart = {};
+
+    updateCart();
+
+    
+}
+
+
+</script>
+<script>
+
+let selectedTime = "";
+
+document.querySelectorAll(".time-slots button")
+.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        document
+            .querySelectorAll(".time-slots button")
+            .forEach(btn => btn.classList.remove("active-time"));
+
+        this.classList.add("active-time");
+
+        selectedTime = this.innerText;
+
+    });
+
+});
+
+
+
+</script>
+<script>
+function reserveTable() {
+
+    const orderNow = confirm(
+        "🎉 Table Reserved Successfully!\n\nWould you like to pre-order your food?\n\nPress OK to Order Food.\nPress Cancel to Skip."
+    );
+
+    generateQueue();
+
+    if(orderNow){
+        document.getElementById("menu-section")
+                .scrollIntoView({behavior:"smooth"});
+    } else {
+        alert(
+          "👍 Your reservation is confirmed.\nYou can order food later at the restaurant."
+        );
+    }
+}
+
+function generateQueue(){
+
+    const queueNo = Math.floor(Math.random() * 100) + 1;
+    const ahead = Math.floor(Math.random() * 10);
+
+    let waitTime = ahead * 5;
+
+    if(waitTime === 0){
+        waitTime = 1;
+    }
+
+    document.getElementById("queueNumber").innerText = "#" + queueNo;
+    document.getElementById("peopleAhead").innerText = ahead;
+    document.getElementById("waitTime").innerText = waitTime + " min";
+
+    document.getElementById("queueCard").style.display = "block";
+
+    const status = document.getElementById("queueStatus");
+    const countdown = document.getElementById("countdown");
+
+    status.innerText = "🟠 Waiting";
+    status.className = "status waiting";
+
+    let remaining = waitTime;
+
+    countdown.innerText = remaining + " min";
+
+    let timer = setInterval(() => {
+
+        remaining--;
+
+        countdown.innerText = remaining + " min";
+
+        if(remaining <= 0){
+
+            clearInterval(timer);
+
+            status.innerText = "🟢 Ready";
+            status.className = "status ready";
+
+            alert(
+                "🎉 Your table is ready!\n\n" +
+                "Please proceed to the restaurant within the next 10 minutes."
+            );
+
+            setTimeout(() => {
+
+                status.innerText = "🔵 Seated";
+                status.className = "status seated";
+
+            }, 10000);
+        }
+
+    }, 1000); // 1 second = 1 minute for demo
+}
+</script>
+
+</body>
+</html>

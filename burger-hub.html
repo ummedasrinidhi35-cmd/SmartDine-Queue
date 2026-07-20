@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="banner-container">
+
+    <img class="banner-image" src="images/banner1.jpg" alt="Restaurant Banner">
+
+    <div class="banner-content">
+        <h1>Burger Hub</h1>
+
+        <div class="banner-info">
+            <span>⭐ 4.3 Rating</span>
+            <span>📍 1.5 km Away</span>
+            <span>🎉 15% OFF</span>
+        </div>
+    </div>
+
+</div>
+<section class="about-section">
+    <h2>About Restaurant</h2>
+    <p>
+        Burger Hub is known for its juicy, flame-grilled burgers and fresh ingredients.
+        We pride ourselves on creating the perfect balance of flavors and textures in every bite. 
+        Our signature burgers are made with 100% beef, fresh vegetables, and our secret sauce that has won over countless customers. 
+        Whether you're in the mood for a classic cheeseburger or something more adventurous, we have something for everyone.
+
+    </p>
+</section>
+    <hr>
+    <section class="gallery-section">
+
+    <h2>Gallery</h2>
+
+    <div class="gallery-grid">
+        <img src="images/burger1.jpg" alt="burger 1">
+        <img src="images/burger2.jpg" alt="burger 2">
+        <img src="images/burger3.jpg" alt="burger 3">
+    </div>
+</section>
+    
+    <hr>
+    <section class="category-section">
+    <button onclick="filterMenu('burgers')">Burgers</button>
+    <button onclick="filterMenu('pizzas')">Pizzas</button>
+    <button onclick="filterMenu('sides')">Sides</button>
+    <button onclick="filterMenu('beverages')">Beverages</button>
+    <button onclick="filterMenu('pasta')">Pasta</button>
+</section>
+<section id="menu-section">
+
+<h2>Menu</h2>
+
+<div class="menu-grid">
+
+    <div class="menu-card burgers">
+        <h3>Classic Cheeseburger</h3>
+        <p class="item-desc">
+            Juicy beef patty with cheddar cheese, lettuce, tomato, and our special sauce.
+        </p>
+        <p class="price">₹150</p>
+        <button class="add-btn"
+        onclick="addToCart('Classic Cheeseburger',150,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Classic Cheeseburger',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Classic Cheeseburger',1,this)">+</button>
+        </div>
+</div>
+    <div class="menu-card burgers">
+        <h3>Classic Veg Burger</h3>
+        <p class="item-desc">
+            A delicious plant-based patty with fresh vegetables and our special sauce.
+        </p>
+        <p class="price">₹120</p>
+        <button class="add-btn"
+        onclick="addToCart('Classic Veg Burger',120,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Classic Veg Burger',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Classic Veg Burger',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card burgers">
+        <h3>Chicken Burger</h3>
+        <p class="item-desc">
+            Juicy chicken patty with fresh vegetables and our special sauce.
+        </p>
+        <p class="price">₹180</p>
+        <button class="add-btn"
+        onclick="addToCart('Chicken Burger',180,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Chicken Burger',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Chicken Burger',1,this)">+</button>
+        </div>
+    
+    </div>
+    <div class="menu-card burgers">
+        <h3>Crispy Chicken Burger</h3>
+        <p class="item-desc">
+            Crispy chicken patty with fresh vegetables and our special sauce.
+        </p>
+        <p class="price">₹200</p>
+        <button class="add-btn"
+        onclick="addToCart('Crispy Chicken Burger',200,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Crispy Chicken Burger',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Crispy Chicken Burger',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card burgers">
+        <h3>Double Patty Burger</h3>
+        <p class="item-desc">
+            Two juicy beef patties with cheddar cheese, lettuce, tomato, and our special sauce.
+        </p>
+        <p class="price">₹250</p>
+        <button class="add-btn"
+        onclick="addToCart('Double Patty Burger',250,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Double Patty Burger',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Double Patty Burger',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pizzas">
+        <h3>Margherita Pizza</h3>
+        <p class="item-desc">
+            Classic pizza with fresh mozzarella, tomatoes, and basil.
+        </p>
+        <p class="price">₹300</p>
+        <button class="add-btn"
+        onclick="addToCart('Margherita Pizza',300,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Margherita Pizza',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Margherita Pizza',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pizzas">
+        <h3>Pepperoni Pizza</h3>
+        <p class="item-desc">
+            Pizza with spicy pepperoni, mozzarella cheese, and our special sauce.
+        </p>
+        <p class="price">₹350</p>
+        <button class="add-btn"
+        onclick="addToCart('Pepperoni Pizza',350,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Pepperoni Pizza',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Pepperoni Pizza',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pizzas">
+        <h3>Vegetarian Pizza</h3>
+        <p class="item-desc">
+            Pizza with a variety of fresh vegetables and mozzarella cheese.
+        </p>
+        <p class="price">₹220</p>
+        <button class="add-btn"
+        onclick="addToCart('Vegetarian Pizza',220,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Vegetarian Pizza',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Vegetarian Pizza',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pizzas">
+        <h3>BBQ Chicken Pizza</h3>
+        <p class="item-desc">
+            Pizza with BBQ chicken, mozzarella cheese, and our special sauce.
+        </p>
+        <p class="price">₹400</p>
+        <button class="add-btn"
+        onclick="addToCart('BBQ Chicken Pizza',400,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('BBQ Chicken Pizza',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('BBQ Chicken Pizza',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card sides">
+        <h3>French Fries</h3>
+        <p class="item-desc">
+            Crispy golden fries served with ketchup.
+        </p>
+        <p class="price">₹100</p>
+        <button class="add-btn"
+        onclick="addToCart('French Fries',100,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('French Fries',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('French Fries',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card sides">
+        <h3>Onion Rings</h3>
+        <p class="item-desc">
+            Crispy battered onion rings served with a dipping sauce.
+        </p>
+        <p class="price">₹120</p>
+        <button class="add-btn"
+        onclick="addToCart('Onion Rings',120,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Onion Rings',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Onion Rings',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card sides">
+        <h3>Chicken Nuggets</h3>
+        <p class="item-desc">
+            Bite-sized pieces of chicken, breaded and fried to perfection.
+        </p>
+        <p class="price">₹150</p>
+        <button class="add-btn"
+        onclick="addToCart('Chicken Nuggets',150,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Chicken Nuggets',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Chicken Nuggets',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card sides">
+        <h3>Cheese Sticks</h3>
+        <p class="item-desc">
+            Crispy cheese sticks served with a side of marinara sauce.
+        </p>
+        <p class="price">₹130</p>
+        <button class="add-btn"
+        onclick="addToCart('Cheese Sticks',130,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Cheese Sticks',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Cheese Sticks',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card sides">
+        <h3>Chicken Wings</h3>
+        <p class="item-desc">
+            Spicy chicken wings served with a side of ranch dressing.
+        </p>
+        <p class="price">₹160</p>
+        <button class="add-btn"
+        onclick="addToCart('Chicken Wings',160,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Chicken Wings',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Chicken Wings',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pasta">
+        <h3>Spaghetti Bolognese</h3>
+        <p class="item-desc">
+            Classic Italian pasta with a rich meat sauce.
+        </p>
+        <p class="price">₹200</p>
+        <button class="add-btn"
+        onclick="addToCart('Spaghetti Bolognese',200,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Spaghetti Bolognese',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Spaghetti Bolognese',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pasta">
+        <h3>Fettuccine Alfredo</h3>
+        <p class="item-desc">
+            Creamy Alfredo sauce with fettuccine pasta and parmesan cheese.
+        </p>
+        <p class="price">₹220</p>
+        <button class="add-btn"
+        onclick="addToCart('Fettuccine Alfredo',220,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Fettuccine Alfredo',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Fettuccine Alfredo',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pasta">
+        <h3>Penne Arrabbiata</h3>
+        <p class="item-desc">
+            Spicy tomato sauce with penne pasta and fresh herbs.
+        </p>
+        <p class="price">₹180</p>
+        <button class="add-btn"
+        onclick="addToCart('Penne Arrabbiata',180,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Penne Arrabbiata',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Penne Arrabbiata',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card pasta">
+        <h3>Lasagna</h3>
+        <p class="item-desc">
+            Layers of pasta, meat sauce, and cheese baked to perfection.
+        </p>
+        <p class="price">₹250</p>
+        <button class="add-btn"
+        onclick="addToCart('Lasagna',250,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Lasagna',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Lasagna',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card beverages">
+        <h3>Coca-Cola</h3>
+        <p class="item-desc">
+            Refreshing carbonated soft drink.
+        </p>
+        <p class="price">₹50</p>
+        <button class="add-btn"
+        onclick="addToCart('Coca-Cola',50,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Coca-Cola',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Coca-Cola',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card beverages">
+        <h3>Orange Juice</h3>
+        <p class="item-desc">
+            Freshly squeezed orange juice.
+        </p>
+        <p class="price">₹70</p>
+        <button class="add-btn"
+        onclick="addToCart('Orange Juice',70,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Orange Juice',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Orange Juice',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card beverages">
+        <h3>Apple Juice</h3>
+        <p class="item-desc">
+            Freshly squeezed apple juice.
+        </p>
+        <p class="price">₹60</p>
+        <button class="add-btn"
+        onclick="addToCart('Apple Juice',60,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Apple Juice',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Apple Juice',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card beverages">
+        <h3>Lemonade</h3>
+        <p class="item-desc">
+            Refreshing lemonade made with fresh lemons.
+        </p>
+        <p class="price">₹55</p>
+        <button class="add-btn"
+        onclick="addToCart('Lemonade',55,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Lemonade',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Lemonade',1,this)">+</button>
+        </div>
+    </div>
+    <div class="menu-card beverages">
+        <h3>Iced Tea</h3>
+        <p class="item-desc">
+            Chilled tea served with ice and lemon.
+        </p>
+        <p class="price">₹65</p>
+        <button class="add-btn"
+        onclick="addToCart('Iced Tea',65,this)">Add</button>
+        <div class="qty-controls" style="display:none;">
+            <button onclick="updateItem('Iced Tea',-1,this)">-</button>
+            <span>1</span>
+            <button onclick="updateItem('Iced Tea',1,this)">+</button>
+        </div>
+    </div>
+
+</div>
+</section>
+<section class="your-order">
+
+    <h2> Your Order</h2>
+
+    <div id="cartItems"></div>
+    <button id="placeOrderBtn"
+        onclick="placeOrder()"
+        style="display:none;">
+    Place Order
+</button>
+
+    
+
+</section>
+<section class="reservation-section" id="reservation">
+
+    <h2>Reserve a Table</h2>
+
+    <div class="offer-banner">
+        🎉 10% OFF applied on your total bill
+    </div>
+
+    <label>Date</label>
+    <input type="date" id="reservationDate">
+
+    <label>Select a Time</label>
+
+    <div class="time-slots" id="timeSlots">
+        <button type="button">12:00 PM</button>
+        <button type="button">12:30 PM</button>
+        <button type="button">1:00 PM</button>
+        <button type="button">7:00 PM</button>
+        <button type="button">7:30 PM</button>
+        <button type="button">8:00 PM</button>
+        <button type="button">8:30 PM</button>
+        <button type="button">9:00 PM</button>
+        <button type="button">9:30 PM</button>
+    </div>
+
+    <label>Number of Guests</label>
+
+    <select id="guests">
+        <option>1 Guest</option>
+        <option selected>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4 Guests</option>
+        <option>5 Guests</option>
+        <option>6 Guests</option>
+    </select>
+
+    
+
+    <p class="reservation-note">
+        Free cancellation up to 24 hours before.
+        No credit card needed.
+    </p>
+
+    <button
+    class="confirm-btn"
+    id="confirmBtn"
+    onclick="confirmReservation()">
+    Confirm Reservation
+</button>
+
+</section>
+<div id="queueCard" class="queue-card">
+
+    <h3>🎟 Queue Status</h3>
+
+    <p><strong>Queue Number:</strong>
+       <span id="queueNumber"></span></p>
+
+    <p><strong>People Ahead:</strong>
+       <span id="peopleAhead"></span></p>
+
+    <p><strong>Customers Waiting:</strong>
+       <span id="waitingCustomers"></span></p>
+
+    <p><strong>Tables Reserved Today:</strong>
+       <span id="reservedToday"></span></p>
+
+    <p><strong>Estimated Wait:</strong>
+       <span id="waitTime"></span></p>
+
+    <p><strong>Expected Entry Time:</strong>
+       <span id="entryTime"></span></p>
+
+    <p>
+    <strong>Status:</strong>
+    <span id="queueStatus" class="status waiting">
+        🟠 Waiting
+    </span>
+</p>
+    <p>
+    <strong>Remaining Wait:</strong>
+    <span id="countdown">0 min</span>
+</p>
+
+</div>
+<section class="contact-details">
+    <h2>Contact Details</h2>
+
+    <div class="contact-info">
+        <p><strong>📞 Phone:</strong> +91 9890123456</p>
+
+        <p><strong>📧 Email:</strong> contact@burgerhub.com</p>
+
+        <p><strong>📍 Address:</strong> Road No. 42, Bangara Hills, Hyderabad</p>
+
+        <p><strong>🕒 Opening Hours:</strong> 11:00 AM - 11:00 PM</p>
+    </div>
+</section>
+<script>
+function addItem(button) {
+    button.style.display = "none";
+    button.nextElementSibling.style.display = "flex";
+}
+
+function changeQty(button, change) {
+    let span = button.parentElement.querySelector("span");
+    let qty = parseInt(span.innerText);
+
+    qty += change;
+
+    if (qty <= 0) {
+        button.parentElement.style.display = "none";
+        button.parentElement.previousElementSibling.style.display = "inline-block";
+    } else {
+        span.innerText = qty;
+    }
+}
+</script>
+<script>
+
+let cart = {};
+
+function addToCart(name, price, button){
+
+    if(!cart[name]){
+        cart[name] = {
+            price: price,
+            qty: 1
+        };
+
+        button.style.display = "none";
+        button.nextElementSibling.style.display = "flex";
+    }
+
+    updateCart();
+}
+function updateItem(name, change, btn){
+
+    let controls = btn.parentElement;
+    let qtySpan = controls.querySelector("span");
+
+    cart[name].qty += change;
+
+    if(cart[name].qty <= 0){
+
+        delete cart[name];
+
+        controls.style.display = "none";
+        controls.previousElementSibling.style.display = "inline-block";
+
+    } else {
+
+        qtySpan.innerText = cart[name].qty;
+    }
+
+    updateCart();
+}
+function updateCart(){
+
+    let cartHTML = "";
+    let subtotal = 0;
+
+    for(let item in cart){
+
+        let qty = cart[item].qty;
+        let price = cart[item].price;
+
+        subtotal += qty * price;
+
+        cartHTML += `
+            <p>${item} x ${qty} = ₹${qty * price}</p>
+        `;
+    }
+
+    let gst = subtotal * 0.05;
+    let discount = subtotal * 0.20;
+
+    let finalAmount = subtotal + gst - discount;
+
+    cartHTML += `
+        <hr>
+        <p>Subtotal: ₹${subtotal.toFixed(2)}</p>
+        <p>GST (5%): ₹${gst.toFixed(2)}</p>
+        <p>Discount (20% OFF): -₹${discount.toFixed(2)}</p>
+        <h3>Total: ₹${finalAmount.toFixed(2)}</h3>
+    `;
+
+    document.getElementById("cartItems").innerHTML = cartHTML;
+    const placeBtn =
+    document.getElementById("placeOrderBtn");
+
+if(Object.keys(cart).length > 0){
+    placeBtn.style.display = "block";
+}
+else{
+    placeBtn.style.display = "none";
+}
+}
+
+function changeQty(item,value){
+
+    cart[item].qty += value;
+
+    if(cart[item].qty <= 0){
+        delete cart[item];
+    }
+
+    updateCart();
+}
+
+function filterMenu(category){
+
+    let cards = document.querySelectorAll(".menu-card");
+
+    cards.forEach(card=>{
+
+        if(category === "all"){
+            card.style.display = "block";
+        }
+        else if(card.classList.contains(category)){
+            card.style.display = "block";
+        }
+        else{
+            card.style.display = "none";
+        }
+
+    });
+}
+
+function confirmReservation(){
+
+    let date =
+        document.getElementById("reservationDate").value;
+
+    if(date === ""){
+        alert("Please select a date");
+        return;
+    }
+
+    if(selectedTime === ""){
+        alert("Please select a time slot");
+        return;
+    }
+
+    const preorder = confirm(
+        "🍽️ Would you like to pre-order your food?\n\n" +
+        "Pre-ordering helps us prepare your meal before you arrive."
+    );
+
+    if(preorder){
+
+        document
+            .getElementById("menu-section")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+        return;
+    }
+
+    alert(
+        "🎉 Your table has been reserved successfully!\n\n" +
+        "Thank you for choosing us."
+    );
+
+    generateQueue();
+    
+}
+function placeOrder(){
+
+    if(Object.keys(cart).length === 0){
+
+        alert(
+            "Please add food items first."
+        );
+
+        return;
+    }
+
+    alert(
+        "🎉 Your table is reserved successfully!\n\n" +
+        "🍽️ Your order has been placed.\n\n" +
+        "Thank you for choosing us."
+    );
+
+    generateQueue();
+
+    document
+        .getElementById("queueCard")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+}
+</script>
+<script>
+function clearCart(){
+
+    cart = {};
+
+    updateCart();
+
+    
+}
+
+
+</script>
+<script>
+
+let selectedTime = "";
+
+document.querySelectorAll(".time-slots button")
+.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        document
+            .querySelectorAll(".time-slots button")
+            .forEach(btn => btn.classList.remove("active-time"));
+
+        this.classList.add("active-time");
+
+        selectedTime = this.innerText;
+
+    });
+
+});
+
+
+
+</script>
+<script>
+function reserveTable() {
+
+    const orderNow = confirm(
+        "🎉 Table Reserved Successfully!\n\nWould you like to pre-order your food?\n\nPress OK to Order Food.\nPress Cancel to Skip."
+    );
+
+    generateQueue();
+
+    if(orderNow){
+        document.getElementById("menu-section")
+                .scrollIntoView({behavior:"smooth"});
+    } else {
+        alert(
+          "👍 Your reservation is confirmed.\nYou can order food later at the restaurant."
+        );
+    }
+}
+
+function generateQueue(){
+
+    const queueNo = Math.floor(Math.random() * 100) + 1;
+    const ahead = Math.floor(Math.random() * 10);
+
+    let waitTime = ahead * 5;
+
+    if(waitTime === 0){
+        waitTime = 1;
+    }
+
+    document.getElementById("queueNumber").innerText = "#" + queueNo;
+    document.getElementById("peopleAhead").innerText = ahead;
+    document.getElementById("waitTime").innerText = waitTime + " min";
+
+    document.getElementById("queueCard").style.display = "block";
+
+    const status = document.getElementById("queueStatus");
+    const countdown = document.getElementById("countdown");
+
+    status.innerText = "🟠 Waiting";
+    status.className = "status waiting";
+
+    let remaining = waitTime;
+
+    countdown.innerText = remaining + " min";
+
+    let timer = setInterval(() => {
+
+        remaining--;
+
+        countdown.innerText = remaining + " min";
+
+        if(remaining <= 0){
+
+            clearInterval(timer);
+
+            status.innerText = "🟢 Ready";
+            status.className = "status ready";
+
+            alert(
+                "🎉 Your table is ready!\n\n" +
+                "Please proceed to the restaurant within the next 10 minutes."
+            );
+
+            setTimeout(() => {
+
+                status.innerText = "🔵 Seated";
+                status.className = "status seated";
+
+            }, 10000);
+        }
+
+    }, 1000); // 1 second = 1 minute for demo
+}
+</script>
+
+
+
+</body>
+</html>
+    
+
+
