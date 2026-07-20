@@ -52,21 +52,27 @@ The system helps reduce waiting time, improves restaurant efficiency, and provid
 
 ## 📂 Project Structure
 
-```
-SmartDineQueue/
-│
-├── index.html
-├── README.md
+## 📂 Project Structure
+
+```text
+SmartDine-Queue/
 │
 ├── css/
 │   └── style.css
 │
+├── images/
+│
 ├── js/
 │   └── script.js
 │
-├── images/
+├── screenshots/
 │
-└── assets/
+├── index.html
+├── booking.html
+├── burger-hub.html
+├── paradise-biryani.html
+│
+└── README.md
 ```
 
 ---
@@ -120,19 +126,47 @@ SmartDineQueue/
 
 ---
 
-## 📸 Screenshots
 
-Add screenshots of your project here.
 
-Example:
+## 📸 Project Screenshots
 
-```
-Home Page
-Reservation Page
-Food Menu
-Queue Status
-```
+## 🏠 Home Page
 
+<p align="center">
+  <img src="screenshots/home1.png" width="45%">
+  <img src="screenshots/home2.png" width="45%">
+</p>
+
+## 🍽️ Restaurant Details
+
+<p align="center">
+  <img src="screenshots/restaurant-page.png" width="45%">
+</p>
+
+## 🍕 Food Ordering
+
+<p align="center">
+  <img src="screenshots/menu-order.png" width="45%">
+</p>
+
+## 🪑 Table Reservation
+
+<p align="center">
+  <img src="screenshots/reservation.png" width="45%">
+</p>
+
+## ⏳ Queue Management
+
+<p align="center">
+  <img src="screenshots/queue-status.png" width="45%">
+</p>
+
+## 💳 Bill Summary
+
+
+<p align="center">
+  <img src="screenshots/bill-summary.png" width="45%">
+</p>
 ---
 
 ## 🔮 Future Enhancements
