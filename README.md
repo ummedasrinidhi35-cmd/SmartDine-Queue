@@ -192,6 +192,6 @@ Graduation Project
 
 ## 📄 License
 
-This project is developed for educational and academic purposes.
+This project is licensed under the MIT License.
 
-Feel free to use and modify it for learning purposes.
+© 2026 Ummeda Srinidhi. All rights reserved.
